@@ -1,0 +1,15 @@
+python preprocess_data.py \
+  --wandb_project mlops-zoomcamp \
+  --wandb_entity sotoblanco \
+  --raw_data_path data/green \
+  --dest_path ./output
+
+python train.py \
+  --wandb_project mlops-zoomcamp \
+  --wandb_entity sotoblanco \
+  --data_artifact "sotoblanco/mlops-zoomcamp/NYC-Taxi:v0"
+
+python sweep.py \
+  --wandb_project mlops-zoomcamp \
+  --wandb_entity sotoblanco \
+  --data_artifact "sotoblanco/mlops-zoomcamp/NYC-Taxi:v0"

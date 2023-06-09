@@ -1,0 +1,34 @@
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Current SDK version is 0.15.4
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Configure stats pid to 223058
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Loading settings from /home/pastor/.config/wandb/settings
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Loading settings from /home/pastor/mlops-zoomcamp-course/02_wandb/wandb/settings
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'entity': 'sotoblanco', 'project': 'mlops-zoomcamp', 'root_dir': '/home/pastor/mlops-zoomcamp-course/02_wandb', 'run_id': 'a4sgupya', 'sweep_param_path': '/home/pastor/mlops-zoomcamp-course/02_wandb/wandb/sweep-vl13lggz/config-a4sgupya.yaml', 'sweep_id': 'vl13lggz'}
+2023-06-09 14:50:10,395 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': '02_wandb/sweep.py', 'program': '/home/pastor/mlops-zoomcamp-course/02_wandb/sweep.py'}
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:_log_setup():507] Logging user logs to /home/pastor/mlops-zoomcamp-course/02_wandb/wandb/run-20230609_145010-a4sgupya/logs/debug.log
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:_log_setup():508] Logging internal logs to /home/pastor/mlops-zoomcamp-course/02_wandb/wandb/run-20230609_145010-a4sgupya/logs/debug-internal.log
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:init():547] calling init triggers
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:init():554] wandb.init called with sweep_config: {'max_depth': 14, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 34}
+config: {}
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:init():596] starting backend
+2023-06-09 14:50:10,396 INFO    Thread-79 :223058 [wandb_init.py:init():600] setting up manager
+2023-06-09 14:50:10,402 INFO    Thread-79 :223058 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-06-09 14:50:10,409 INFO    Thread-79 :223058 [wandb_init.py:init():606] backend started and connected
+2023-06-09 14:50:10,415 INFO    Thread-79 :223058 [wandb_run.py:_config_callback():1283] config_cb None None {'max_depth': 14, 'min_samples_leaf': 2, 'min_samples_split': 6, 'n_estimators': 34}
+2023-06-09 14:50:10,417 INFO    Thread-79 :223058 [wandb_init.py:init():703] updated telemetry
+2023-06-09 14:50:10,433 INFO    Thread-79 :223058 [wandb_init.py:init():736] communicating run to backend with 60.0 second timeout
+2023-06-09 14:50:10,583 INFO    Thread-79 :223058 [wandb_run.py:_on_init():2176] communicating current version
+2023-06-09 14:50:10,658 INFO    Thread-79 :223058 [wandb_run.py:_on_init():2185] got version response 
+2023-06-09 14:50:10,658 INFO    Thread-79 :223058 [wandb_init.py:init():787] starting run threads in backend
+2023-06-09 14:50:12,916 INFO    Thread-79 :223058 [wandb_run.py:_console_start():2155] atexit reg
+2023-06-09 14:50:12,917 INFO    Thread-79 :223058 [wandb_run.py:_redirect():2010] redirect: SettingsConsole.WRAP_RAW
+2023-06-09 14:50:12,918 INFO    Thread-79 :223058 [wandb_run.py:_redirect():2075] Wrapping output streams.
+2023-06-09 14:50:12,918 INFO    Thread-79 :223058 [wandb_run.py:_redirect():2100] Redirects installed.
+2023-06-09 14:50:12,919 INFO    Thread-79 :223058 [wandb_init.py:init():828] run started, returning control to user process
+2023-06-09 14:50:19,460 INFO    Thread-79 :223058 [wandb_run.py:_finish():1890] finishing run sotoblanco/mlops-zoomcamp/a4sgupya
+2023-06-09 14:50:19,461 INFO    Thread-79 :223058 [wandb_run.py:_atexit_cleanup():2124] got exitcode: 0
+2023-06-09 14:50:19,461 INFO    Thread-79 :223058 [wandb_run.py:_restore():2107] restore
+2023-06-09 14:50:19,461 INFO    Thread-79 :223058 [wandb_run.py:_restore():2113] restore done
+2023-06-09 14:50:23,222 INFO    Thread-79 :223058 [wandb_run.py:_footer_history_summary_info():3467] rendering history
+2023-06-09 14:50:23,222 INFO    Thread-79 :223058 [wandb_run.py:_footer_history_summary_info():3499] rendering summary
+2023-06-09 14:50:23,227 INFO    Thread-79 :223058 [wandb_run.py:_footer_sync_info():3426] logging synced files

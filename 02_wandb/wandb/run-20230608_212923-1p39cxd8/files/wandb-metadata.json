@@ -1,0 +1,66 @@
+{
+    "os": "Linux-5.15.0-1033-gcp-x86_64-with-glibc2.31",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-06-08T21:29:24.047001",
+    "startedAt": "2023-06-08T21:29:23.720170",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "mlops-zoomcamp",
+        "--wandb_entity",
+        "sotoblanco",
+        "--raw_data_path",
+        "data/green",
+        "--dest_path",
+        "./output"
+    ],
+    "state": "running",
+    "program": "/home/pastor/mlops-zoomcamp-course/02_wandb/preprocess_data.py",
+    "codePath": "02_wandb/preprocess_data.py",
+    "git": {
+        "remote": "https://github.com/sotoblanco/mlops-zoomcamp.git",
+        "commit": "c5a00a11eae68e3f485db6554de24cf32cc8623a"
+    },
+    "email": "sotoblanco263542@gmail.com",
+    "root": "/home/pastor/mlops-zoomcamp-course",
+    "host": "de-zoomcamp",
+    "username": "pastor",
+    "executable": "/home/pastor/anaconda3/envs/wb-zoomcamp/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 57.96697235107422,
+        "used": 15.32833480834961
+    },
+    "memory": {
+        "total": 15.623279571533203
+    }
+}

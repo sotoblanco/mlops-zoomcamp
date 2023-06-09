@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/pastor/mlops-zoomcamp-course/02_wandb/preprocess_data.py", line 96, in <module>
+    run_data_prep()
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/pastor/mlops-zoomcamp-course/02_wandb/preprocess_data.py", line 59, in run_data_prep
+    df_train = read_dataframe(
+  File "/home/pastor/mlops-zoomcamp-course/02_wandb/preprocess_data.py", line 17, in read_dataframe
+    df = pd.read_parquet(filename)
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/pandas/io/parquet.py", line 509, in read_parquet
+    return impl.read(
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/pandas/io/parquet.py", line 220, in read
+    path_or_handle, handles, kwargs["filesystem"] = _get_path_or_handle(
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/pandas/io/parquet.py", line 110, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/pastor/anaconda3/envs/wb-zoomcamp/lib/python3.9/site-packages/pandas/io/common.py", line 868, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'data/green/green_tripdata_2022-01.parquet'
