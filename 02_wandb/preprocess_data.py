@@ -7,7 +7,6 @@ import wandb
 
 from sklearn.feature_extraction import DictVectorizer
 
-
 def dump_pickle(obj, filename: str):
     with open(filename, "wb") as f_out:
         return pickle.dump(obj, f_out)
