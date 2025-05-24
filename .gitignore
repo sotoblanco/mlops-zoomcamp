@@ -1,3 +1,7 @@
 *.parquet
 /project
 /data
+.ipynb_checkpoints
+.venv
+__pycache__
+.env
