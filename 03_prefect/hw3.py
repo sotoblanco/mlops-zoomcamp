@@ -12,14 +12,11 @@ from sklearn.metrics import root_mean_squared_error
 
 import mlflow
 
-mlflow.set_tracking_uri("http://localhost:5000")
-mlflow.set_experiment("nyc-taxi-experiment-hw")
-
-models_folder = Path('models')
-models_folder.mkdir(exist_ok=True)
+from prefect import flow, task
 
 
 
+@task(name="read_dataframe")
 def read_dataframe(year, month):
     url = f'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year}-{month:02d}.parquet'
     df = pd.read_parquet(url)
@@ -35,6 +32,7 @@ def read_dataframe(year, month):
     return df
 
 
+@task(name="create_X")
 def create_X(df, dv=None):
     categorical = ['PULocationID', 'DOLocationID']
     numerical = ['trip_distance']
@@ -49,14 +47,12 @@ def create_X(df, dv=None):
     return X, dv
 
 
+@task(name="train_model")
 def train_model(X_train, y_train, X_val, y_val, dv):
     with mlflow.start_run() as run:
 
-
         lr = LinearRegression()
         lr.fit(X_train, y_train)
-
-
 
         y_pred = lr.predict(X_val)
         rmse = root_mean_squared_error(y_val, y_pred)
@@ -71,7 +67,15 @@ def train_model(X_train, y_train, X_val, y_val, dv):
         return run.info.run_id
 
 
+@flow(name="train_model_flow")
 def run(year, month):
+    
+    models_folder = Path('models')
+    models_folder.mkdir(exist_ok=True)
+    
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    mlflow.set_experiment("nyc-taxi-experiment")
+
     df_train = read_dataframe(year=year, month=month)
 
     next_year = year if month < 12 else year + 1

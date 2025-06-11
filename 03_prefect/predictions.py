@@ -12,6 +12,8 @@ from sklearn.metrics import root_mean_squared_error
 
 import mlflow
 
+from prefect import flow, task
+
 mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("nyc-taxi-experiment")
 
@@ -19,7 +21,7 @@ models_folder = Path('models')
 models_folder.mkdir(exist_ok=True)
 
 
-
+@task(name="read_dataframe")
 def read_dataframe(year, month):
     url = f'https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_{year}-{month:02d}.parquet'
     df = pd.read_parquet(url)
@@ -37,6 +39,7 @@ def read_dataframe(year, month):
     return df
 
 
+@task(name="create_X")
 def create_X(df, dv=None):
     categorical = ['PU_DO']
     numerical = ['trip_distance']
@@ -51,6 +54,7 @@ def create_X(df, dv=None):
     return X, dv
 
 
+@task(name="train_model")
 def train_model(X_train, y_train, X_val, y_val, dv):
     with mlflow.start_run() as run:
         train = xgb.DMatrix(X_train, label=y_train)
@@ -89,6 +93,7 @@ def train_model(X_train, y_train, X_val, y_val, dv):
         return run.info.run_id
 
 
+@flow(name="train_model_flow")
 def run(year, month):
     df_train = read_dataframe(year=year, month=month)
 
